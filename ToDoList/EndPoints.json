@@ -1,0 +1,23 @@
+﻿{
+  "EndPointConfigurations": [
+    {
+      "Name": "ToDo_SQLite",
+      "IsActive": "true",
+      "API_Name": "ToDo",
+      "Preference": "30",
+      "EndPointType": "DBMS",
+      "ProviderName": "SQLite",
+      "ConnectionString": "Filename=tddatabase.db"
+    },
+
+    {
+      "Name": "ToDo_WebAPI",
+      "IsActive": "false",
+      "API_Name": "ToDo",
+      "Preference": "100",
+      "EndPointType": "HTTP",
+      "ProviderName": "WebAPI",
+      "ConnectionString": "http://localhost:5000/api/"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+﻿<ContentDialog
+    x:Class="ToDoList.Views.SettingsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ToDoList.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Setting"
+    PrimaryButtonText="Button1"
+    SecondaryButtonText="Button2"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <ContentDialog.TitleTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- Title setting-->
+                <TextBlock Grid.Column="0" Text="{Binding}" />
+                <Button
+                    Grid.Column="1"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="BtnCloseSettings_Click"
+                    CornerRadius="3">
+                    <SymbolIcon Symbol="Cancel" />
+                </Button>
+            </Grid>
+        </DataTemplate>
+    </ContentDialog.TitleTemplate>
+
+    <Grid Margin="0,8,0,0">
+        <Pivot>
+            <!-- Setting general-->
+            <PivotItem Header="General">
+                <ScrollViewer>
+                    <Grid Margin="0,8,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel
+                            Grid.Row="0"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                            
+                            <!-- Icon Onedrive-->
+                            <Image
+                                Width="90"
+                                Height="90"
+                                Source="ms-appx:///Assets/icon_onedrive.png"
+                                Stretch="Fill" />
+                            <TextBlock
+                                Margin="4"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="24"
+                                FontWeight="Bold"
+                                Text="OneDrive Services" />
+                        </StackPanel>
+
+                        <Grid
+                            x:Name="resultsGrid"
+                            Grid.Row="1"
+                            Margin="0,0,0,16"
+                            VerticalAlignment="Top">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            
+                            <!-- Result Services-->
+                            <StackPanel
+                                Grid.Row="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal">
+
+                                <TextBlock
+                                    x:Name="txtResults"
+                                    VerticalAlignment="Center"
+                                    FontWeight="Bold" />
+                                <TextBlock
+                                    VerticalAlignment="Center"
+
+                                    />
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Row="1" HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal">
+                                <TextBlock>use SQLite Framework</TextBlock>
+                            </StackPanel>
+                        </Grid>
+
+                        <!-- Button -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" HorizontalAlignment="Center">
+
+                                <Button
+                                    x:Name="btnBackupTip"
+                                    Margin="4,2,4,4"
+                                    Click="btnBackupTip_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72C;" />
+                                        <TextBlock Margin="4,0,0,0" Text="Backup to OneDrive" />
+                                    </StackPanel>
+                                    <Button.Resources>
+                                        <muxc:TeachingTip
+                                            x:Name="BackupTip"
+                                            Title="Confirm Data Backup"
+                                            ActionButtonClick="BackupTip_ActionButtonClick"
+                                            ActionButtonContent="Yes"
+                                            CloseButtonContent="No"
+                                            IsLightDismissEnabled="True"
+                                            PreferredPlacement="Top"
+                                            Subtitle="Are you sure you wish to backup your data?"
+                                            Target="{x:Bind btnBackupTip}" />
+                                    </Button.Resources>
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Column="1" HorizontalAlignment="Center">
+                                <Button
+                                    x:Name="btnRestoreTip"
+                                    Margin="4,2,4,4"
+                                    Click="btnRestoreTip_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE777;" />
+                                        <TextBlock Margin="4,0,0,0" Text="Restore from OneDrive" />
+                                    </StackPanel>
+                                    <Button.Resources>
+                                        <muxc:TeachingTip
+                                            x:Name="RestoreTip"
+                                            Title="Confirm Data Restore"
+                                            ActionButtonClick="RestoreTip_ActionButtonClick"
+                                            ActionButtonContent="Yes"
+                                            CloseButtonContent="No"
+                                            IsLightDismissEnabled="True"
+                                            PreferredPlacement="Top"
+                                            Subtitle="Are you sure you wish to overwrite your data? This requires the application to restart."
+                                            Target="{x:Bind btnRestoreTip}" />
+                                    </Button.Resources>
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Column="2" HorizontalAlignment="Stretch">
+                                <Button
+                                    x:Name="btnSignOutTip"
+                                    Margin="4,2,4,4"
+                                    HorizontalAlignment="Stretch"
+                                    Click="btnSignOut_Click">
+                                    <Button.Resources>
+                                        <muxc:TeachingTip
+                                            x:Name="SignOutPopup"
+                                            Title="Confirm Sign Out"
+                                            ActionButtonClick="SignOutPopup_ConfirmClick"
+                                            ActionButtonContent="Yes"
+                                            CloseButtonContent="No"
+                                            IsLightDismissEnabled="True"
+                                            PreferredPlacement="Top"
+                                            Subtitle="Are you sure you wish to sign out?"
+                                            Target="{x:Bind btnSignOutTip}" />
+                                    </Button.Resources>
+                                    <StackPanel Orientation="Horizontal">
+                                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF3B1;" />
+                                        <TextBlock Margin="4,0,0,0" Text="Sign Out" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+
+            <!-- Setting About-->
+            <PivotItem Header="About">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid Margin="0,16,0,8">
+                        <TextBlock
+                            HorizontalAlignment="Center">
+                            App ToDo List 
+                            Author HungPK
+                        </TextBlock>
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</ContentDialog>

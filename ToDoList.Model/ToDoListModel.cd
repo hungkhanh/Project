@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ToDoList.Model.API_Name" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>API_Name.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDoList.Model.BoardIFM" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>BoardIFM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDoList.Model.DatabaseProvider" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDoList.Model.EndPointType" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAAAAAAAAAAAAAAAAIAAAEAAAAAAAAAABAAAA=</HashCode>
+      <FileName>EndPointType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDoList.Model.RowOpResult&lt;T&gt;" Collapsed="true">
+    <Position X="4.75" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="ToDoList.Model.RowOpResult" ManuallyRouted="true">
+      <Path>
+        <Point X="3.5" Y="1.531" />
+        <Point X="4.75" Y="1.531" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RowOpResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDoList.Model.RowOpResult" Collapsed="true">
+    <Position X="2" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RowOpResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDoList.Model.TaskIFM" Collapsed="true">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAEACiAGAAAAAAAAAAgAAAAEAAAAAEAmAACAA=</HashCode>
+      <FileName>TaskIFM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ToDoList.Model.IBoardServices" Collapsed="true">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>IBoardServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ToDoList.Model.IDatabaseServices" Collapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDatabaseServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ToDoList.Model.IServiceManifest" Collapsed="true">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAIA=</HashCode>
+      <FileName>IServiceManifest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ToDoList.Model.ITaskServices" Collapsed="true">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAQhBAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>ITaskServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
