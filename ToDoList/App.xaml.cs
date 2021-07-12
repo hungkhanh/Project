@@ -47,20 +47,7 @@ namespace ToDoList
 
         public App()
         {
-            // Register SyncfusionLicense
-            // Check to see if API KEY is in your Environment Variables
-/*            if (Environment.GetEnvironmentVariable("SYNCFUSION_API_KEY") == null)
-            {
-               // If key is not available, use free community license here: https://www.syncfusion.com/products/communitylicense
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTMwNjE1QDMxMzcyZTMyMmUzMEFlSlpZMDNRQVFhUy9pOHQ4dzlObVNNbGNsQ3I2bE15NE50U2dzQ1lYK1k9");
-            }
-            else
-            {
-               Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
-                    Environment.GetEnvironmentVariable("SYNCFUSION_API_KEY"));
-            }*/
 
-            // Added because was still prompting users from the store
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTMwNjE1QDMxMzcyZTMyMmUzMEFlSlpZMDNRQVFhUy9pOHQ4dzlObVNNbGNsQ3I2bE15NE50U2dzQ1lYK1k9");
 
             this.InitializeComponent();
@@ -99,11 +86,10 @@ namespace ToDoList
 
         public async void InitializeAuthProvider()
         {
-            // Initialize Authentication Provider
+
             authProvider = new AuthenticationProvider(appId, scopes);
 
-            // Remove any old cached accounts
-            //await authProvider.SignOut();
+
         }
 
         public static AuthenticationProvider GetAuthenticationProvider()
@@ -120,21 +106,18 @@ namespace ToDoList
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
             if (rootFrame == null)
             {
-                // Create a Frame to act as the navigation context and navigate to the first page
+              
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    //TODO: Load state from previously suspended application
+
                 }
 
-                // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
 
@@ -142,16 +125,12 @@ namespace ToDoList
             {
                 if (rootFrame.Content == null)
                 {
-                    // When the navigation stack isn't restored navigate to the first page,
-                    // configuring the new page by passing required information as a navigation
-                    // parameter
+
                     rootFrame.Navigate(typeof(MainView), e.Arguments);
                 }
 
-                // Ensure the current window is active
                 Window.Current.Activate();
 
-                // Hide default title bar and extend your content into the title bar area
                 CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
 
                 var titleBar = ApplicationView.GetForCurrentView().TitleBar;

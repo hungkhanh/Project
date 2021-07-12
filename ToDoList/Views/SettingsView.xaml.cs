@@ -1,24 +1,13 @@
 ﻿using Microsoft.Graph;
 using Microsoft.Identity.Client;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using System.Threading.Tasks;
 using ToDoList.Assist;
 using ToDoList.Controllers;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Content Dialog item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -96,8 +85,8 @@ namespace ToDoList.Views
         {
             CloseTeachingTips();
 
-            // Restore data from OneDrive
-            // Requires application restart
+            // Restore data
+            // Requires app restart
             RestoreFromOneDrive();
         }
 
@@ -320,8 +309,7 @@ namespace ToDoList.Views
         {
             if (RestoreTip.IsOpen)
                 RestoreTip.IsOpen = false;
-            if (BackupTip.IsOpen)
-                BackupTip.IsOpen = false;
+
         }
     }
 }

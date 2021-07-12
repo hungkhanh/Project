@@ -1,0 +1,23 @@
+{
+  "EndPointConfigurations": [
+    {
+      "Name": "ToDo_SQLite",
+      "IsActive": "false",
+      "API_Name": "ToDo",
+      "Preference": "30",
+      "EndPointType": "DBMS",
+      "ProviderName": "SQLite",
+      "ConnectionString": "Filename=ktdatabase.db"
+    },
+
+    {
+      "Name": "ToDo_WebAPI",
+      "IsActive": "false",
+      "API_Name": "ToDo",
+      "Preference": "100",
+      "EndPointType": "HTTP",
+      "ProviderName": "WebAPI",
+      "ConnectionString": "http://localhost:59260/api/BackOffice/"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+﻿<ContentDialog
+    x:Class="ToDoList.Views.DeleteConfirmationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ToDoList.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Delete Confirmation"
+    PrimaryButtonText="Yes"
+    SecondaryButtonText="No"
+    Background="{ThemeResource RegionBrush}"
+    BorderThickness="1"
+    CornerRadius="3">
+
+    <!-- Title template-->
+    <ContentDialog.TitleTemplate>
+        <DataTemplate>
+            <Grid>
+                <TextBlock Text="{Binding}"/>
+            </Grid>
+        </DataTemplate>
+    </ContentDialog.TitleTemplate>
+    
+    <!-- Confirmation delete-->
+    <Grid>
+        <StackPanel Margin="0,25,0,0" Orientation="Horizontal">
+            <TextBlock Text="Are you sure you wish to delete this task?"/>
+        </StackPanel>
+    </Grid>
+</ContentDialog>
